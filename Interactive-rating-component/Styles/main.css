@@ -1,0 +1,189 @@
+body {
+  font-family: "Overpass", sans-serif;
+  font-size: 1.5rem;
+  background-color: #121417;
+  color: hsl(0deg, 0%, 100%);
+}
+
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  list-style: none;
+  text-decoration: none;
+  border: none;
+  outline: none;
+}
+
+img, picture {
+  display: block;
+  width: 100%;
+}
+
+:root {
+  font-size: 10px;
+}
+
+body {
+  display: grid;
+  place-content: center;
+  min-height: 100vh;
+  padding: 3rem;
+  font-size: 1.45rem;
+}
+
+button {
+  cursor: pointer;
+  transition: 0.2s ease-in-out;
+}
+
+.container {
+  display: grid;
+  place-content: center;
+  gap: 1rem;
+}
+
+.component {
+  background-color: #252d37;
+  border-radius: 2rem;
+  padding: 2.5rem;
+  max-width: calc(375px - 5.5rem);
+  background: rgb(37, 45, 55);
+  background: linear-gradient(180deg, rgb(37, 45, 55) 65%, rgba(18, 37, 55, 0.634) 100%);
+}
+
+.cta {
+  display: grid;
+  place-items: center;
+  font-family: "Overpass", sans-serif;
+  border-radius: 3rem;
+  padding: 1.1rem;
+  padding-top: 1.3rem;
+  background-color: #fb7413;
+  color: hsl(0deg, 0%, 100%);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.2rem;
+}
+.cta:hover {
+  background-color: hsl(0deg, 0%, 100%);
+  color: #fb7413;
+}
+
+.component-1 {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  padding-bottom: 3.5rem;
+}
+.component-1 .star {
+  display: grid;
+  place-content: center;
+  width: 35px;
+  height: 35px;
+  padding: 1.5rem;
+  border-radius: 50%;
+  background-color: hsl(213deg, 19%, 22%);
+}
+.component-1 .star img {
+  width: 12px;
+}
+.component-1 .component__body {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+.component-1 .component__body .comp-1__para {
+  color: hsl(217deg, 12%, 63%);
+  font-size: 1.3rem;
+  line-height: 1.9rem;
+}
+.component-1 .ratings {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 0.3rem;
+}
+.component-1 .ratings .rating {
+  display: grid;
+  place-content: center;
+  width: 40px;
+  height: 40px;
+  padding-top: 0.2rem;
+  border-radius: 50%;
+  background-color: hsl(213deg, 19%, 22%);
+  color: hsl(217deg, 12%, 63%);
+  font-size: 1.2rem;
+  font-family: "Overpass", sans-serif;
+}
+.component-1 .ratings .rating:hover {
+  background-color: #fb7413;
+  color: hsl(0deg, 0%, 100%);
+}
+.component-1 .ratings .rating:focus {
+  background-color: hsl(217deg, 12%, 63%);
+  color: hsl(0deg, 0%, 100%);
+}
+.component-1 .ratings .rating .rating-active {
+  background-color: hsl(217deg, 12%, 63%);
+  color: hsl(0deg, 0%, 100%);
+}
+
+.component-2 {
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  padding: 4rem 2rem;
+  gap: 3rem;
+}
+.component-2 .illustration img {
+  width: 110px;
+}
+.component-2 .notify {
+  background-color: hsl(213deg, 19%, 22%);
+  color: #fb7413;
+  font-size: 1.2rem;
+  border-radius: 3rem;
+  padding: 0.3em 1em;
+  padding-top: 0.5em;
+}
+.component-2 .component__body {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+.component-2 .component__body .comp-2__para {
+  line-height: 1.9rem;
+  font-size: 1.3rem;
+  color: hsl(217deg, 12%, 63%);
+}
+.component-2 .rate-again {
+  width: 80%;
+}
+
+@media (min-width: 376px) {
+  .component {
+    width: 365px;
+  }
+  .component-1 .star {
+    padding: 2rem;
+  }
+  .component-1 .ratings .rating {
+    width: 45px;
+    height: 45px;
+    padding-top: 0.2em;
+  }
+  .component-2 {
+    width: 335px;
+  }
+}
+.attribution {
+  font-size: 11px;
+  text-align: center;
+}
+
+.attribution a {
+  color: hsl(228deg, 45%, 44%);
+}/*# sourceMappingURL=main.css.map */

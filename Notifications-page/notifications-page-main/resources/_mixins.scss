@@ -1,0 +1,56 @@
+@mixin center($direction) {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: $direction;
+}
+
+@mixin background-img($color, $url, $pos, $size) {
+  background-image: $url;
+  background-repeat: no-repeat;
+  background-position: $pos;
+  background-color: $color;
+  background-size: $size;
+}
+
+@mixin font-size($sizeValue: 1.6, $line: $sizeValue * 1.5) {
+  font-size: ($sizeValue * 1) + px;
+  line-height: ($line * 1) + px;
+  font-size: calc($sizeValue / 10) + rem;
+  line-height: calc($line / 10) + rem;
+}
+
+@mixin width($width, $maxwidth) {
+  width: $width;
+  max-width: calc($maxwidth * 1) + px;
+  max-width: calc($maxwidth / 10) + rem;
+}
+
+@mixin padding($top: 1.6, $bottom: 1.6, $left: 1.6, $right: 1.6) {
+  padding-block-start: ($top * 1) + px;
+  padding-block-start: calc($top / 16) + rem;
+  padding-block-end: ($bottom * 1) + px;
+  padding-block-end: calc($bottom / 16) + rem;
+  padding-inline-start: ($left * 1) + px;
+  padding-inline-start: calc($left / 16) + rem;
+  padding-inline-end: ($right * 1) + px;
+  padding-inline-end: calc($right / 16) + rem;
+}
+
+@mixin padding-em($blockValue: 1.6, $inlineValue: 1.6) {
+  padding-block: ($blockValue * 1) + px;
+  padding-block: calc($blockValue / 10) + em;
+  padding-inline: ($inlineValue * 1) + px;
+  padding-inline: calc($inlineValue / 10) + em;
+}
+
+@mixin margin($top: 1.6, $bottom: 1.6, $left: 1.6, $right: 1.6) {
+  margin-block-start: ($top * 1) + px;
+  margin-block-start: calc($top / 16) + rem;
+  margin-block-end: ($bottom * 1) + px;
+  margin-block-end: calc($bottom / 16) + rem;
+  margin-inline-start: ($left * 1) + px;
+  margin-inline-start: calc($left / 16) + rem;
+  margin-inline-end: ($right * 1) + px;
+  margin-inline-end: calc($right / 16) + rem;
+}

@@ -1,0 +1,165 @@
+@import "./utility";
+
+@mixin flexCenter($direction) {
+  flex-direction: $direction;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+// - Mobile: 375px
+// - Desktop: 1440px
+$primaryFont: "Montserrat", sans-serif;
+$secondaryFont: "Fraunces", serif;
+$secondaryFont-size: 14px;
+$primaryClrCyan: hsl(158, 36%, 37%);
+$hover--ClrCyan: hsl(159, 40%, 11%);
+$primaryClrCream: hsl(30, 38%, 92%);
+$neutralClrDark-blue: hsl(212, 21%, 14%);
+$neutralClrGreyish-blue: hsl(228, 12%, 48%);
+$neutralClrWhite: hsl(0, 0%, 100%);
+$border-radius: 0.6rem;
+$font-weight1: 500;
+$font-weight2: 700;
+
+body {
+  @include flexCenter(column);
+  justify-content: flex-start;
+  background-color: $primaryClrCream;
+  // height: 100vh;
+  padding: 1rem;
+}
+
+.card {
+  @include flexCenter(column);
+  border-radius: $border-radius;
+  background-color: $neutralClrWhite;
+  .image {
+    height: 100%;
+    img {
+      border-top-left-radius: $border-radius;
+      border-top-right-radius: $border-radius;
+      height: 100%;
+    }
+    .cologne__img--M {
+      display: block;
+    }
+    .cologne__img--D {
+      display: none;
+    }
+  }
+
+  .main {
+    @include flexCenter(column);
+    align-items: flex-start;
+    color: $neutralClrGreyish-blue;
+    font-family: $primaryFont;
+    padding: 1.5em;
+    gap: 1rem;
+
+    .accent--text {
+      text-transform: uppercase;
+      letter-spacing: 0.3rem;
+      font-size: $secondaryFont-size;
+      font-weight: $font-weight1;
+    }
+
+    .card__header {
+      font-family: $secondaryFont;
+      color: $neutralClrDark-blue;
+      font-size: 2.2rem;
+    }
+
+    .card__p {
+      line-height: 1.5rem;
+      font-size: $secondaryFont-size;
+      font-weight: $font-weight1;
+      margin-bottom: 0.5rem;
+    }
+
+    .card__price {
+      @include flexCenter(row);
+      gap: 1rem;
+      margin-bottom: 1rem;
+
+      .price--cyan {
+        color: $primaryClrCyan;
+        font-family: $secondaryFont;
+        font-size: 2rem;
+      }
+
+      .price--strikethrough {
+        text-decoration: line-through;
+        font-size: $secondaryFont-size;
+        font-weight: $font-weight1;
+      }
+    }
+    .add-to-cart {
+      width: 100%;
+      display: flex;
+      img {
+        display: block;
+      }
+      .cta {
+        display: flex;
+        justify-content: center;
+        gap: 1rem;
+        width: 100%;
+        background-color: $primaryClrCyan;
+        border-radius: $border-radius;
+        color: $neutralClrWhite;
+        padding: 1.3em;
+        font-weight: $font-weight2;
+        font-family: $primaryFont;
+        font-size: $secondaryFont-size;
+        cursor: pointer;
+        transition: 0.3s ease-in-out;
+        &:hover {
+          background-color: $hover--ClrCyan;
+        }
+      }
+    }
+  }
+}
+
+.attribution {
+  justify-self: flex-end;
+  font-size: 11px;
+  text-align: center;
+  a {
+    color: hsl(228, 45%, 44%);
+  }
+}
+
+@media screen and (min-width: 600px) {
+  body {
+    justify-content: center;
+    height: 100vh;
+  }
+  .card {
+    @include flexCenter(row);
+    max-width: 600px;
+    .image {
+      flex: 1;
+
+      img {
+        border-top-right-radius: 0;
+        border-bottom-left-radius: $border-radius;
+      }
+      .cologne__img--M {
+        display: none;
+      }
+      .cologne__img--D {
+        display: block;
+      }
+    }
+    .main {
+      flex: 1;
+      max-width: 50%;
+      padding: 2em;
+
+      .card__price {
+        margin-bottom: 1rem;
+      }
+    }
+  }
+}

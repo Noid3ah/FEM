@@ -1,0 +1,24 @@
+$White: hsl(0, 0%, 100%);
+$Grey-100: hsl(217, 12%, 63%);
+$Grey-200: hsl(216, 12%, 55%);
+$Blue-100: hsl(213, 19%, 22%);
+$Blue-200: #252d37;
+$Blue-300: #121417;
+$Orange: #fb7413;
+
+$Weight-100: 400;
+$Weight-200: 700;
+
+$FontSize: 1.5rem;
+$fs-para: 1.3rem;
+$ff-primary: "Overpass", sans-serif;
+
+body {
+  font-family: $ff-primary;
+  font-size: $FontSize;
+
+  background-color: $Blue-300;
+  color: $White;
+}
+
+@import "./resets";

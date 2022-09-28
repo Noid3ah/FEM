@@ -1,0 +1,311 @@
+/* Primary*/
+/*Neutral*/
+/*Font family*/
+/*Font size*/
+/*Font weight*/
+/*Border and spacing*/
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  font-size: 62.5%;
+}
+
+img {
+  width: 100%;
+}
+
+ul,
+li {
+  list-style-type: none;
+}
+
+a {
+  text-decoration: none;
+  color: hsl(235deg, 45%, 61%);
+}
+
+button {
+  border: none;
+  outline: none;
+  background-color: transparent;
+  color: hsl(235deg, 45%, 61%);
+  cursor: pointer;
+}
+
+.active {
+  color: white;
+}
+
+h2 {
+  font-size: 18px;
+  line-height: 15px;
+  font-size: 1.8rem;
+  line-height: 1.5rem;
+}
+
+body {
+  width: 100%;
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  background-color: hsl(226deg, 43%, 10%);
+  padding: 2rem;
+  font-family: "Rubik", sans-serif;
+}
+
+.container {
+  width: 100%;
+  display: grid;
+  grid-template-areas: "dash" "work" "play" "study" "exercise" "social" "self_care";
+  gap: 2rem;
+  color: white;
+}
+
+.dash {
+  display: flex;
+  flex-direction: column;
+  grid-area: dash;
+  border-radius: 2rem;
+}
+.dash .dash__profile {
+  display: flex;
+  align-items: center;
+  background-color: rgb(88, 71, 235);
+  border-radius: 2rem;
+}
+.dash .profile__img {
+  width: 60px;
+  border: 3.5px solid white;
+  border-radius: 50%;
+}
+.dash .profile__txt {
+  margin-left: 1rem;
+  display: flex;
+  flex-direction: column;
+  font-weight: 300;
+}
+.dash .profile__txt .report {
+  font-size: 15px;
+  line-height: 15px;
+  font-size: 1.5rem;
+  line-height: 1.5rem;
+  color: hsl(236deg, 100%, 87%);
+}
+.dash .profile__txt .profile__name {
+  font-weight: 300;
+  font-size: 20px;
+  line-height: 35px;
+  font-size: 2rem;
+  line-height: 3.5rem;
+}
+
+.navigation {
+  padding: 2.2em 3em;
+}
+.navigation .nav__list {
+  display: flex;
+  justify-content: space-between;
+}
+.navigation .nav__list .options {
+  font-size: 15px;
+  line-height: 15px;
+  font-size: 1.5rem;
+  line-height: 1.5rem;
+  font-weight: 400;
+}
+.navigation .nav__list .options:hover {
+  color: white;
+}
+
+.dash,
+.activity__content {
+  background-color: rgb(28, 31, 74);
+  border-radius: 2rem;
+  overflow: hidden;
+  width: 100%;
+}
+
+.dash__profile,
+.activity__content {
+  padding: 3em 2em;
+}
+
+.activity {
+  border-radius: 2rem;
+  display: flex;
+  align-items: flex-end;
+  cursor: pointer;
+}
+.activity:hover > .activity__content {
+  background-color: hsl(236deg, 41%, 34%);
+}
+.activity .activity__content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 2rem;
+  transition: 0.2s ease-in-out;
+  height: 80%;
+  padding: 6em 2em;
+}
+.activity .activity__title {
+  font-weight: 400;
+}
+.activity .time {
+  font-weight: 300;
+  font-size: 30px;
+  line-height: 15px;
+  font-size: 3rem;
+  line-height: 1.5rem;
+}
+.activity .time-frame {
+  font-size: 13px;
+  line-height: 15px;
+  font-size: 1.3rem;
+  line-height: 1.5rem;
+  color: hsl(236deg, 100%, 87%);
+}
+.activity .activity__row,
+.activity .activity-time__row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.activity .svg:hover > svg path {
+  fill: #fff;
+}
+.activity:is(.work) {
+  background-image: url(../images/icon-work.svg);
+  background-repeat: no-repeat;
+  background-position: 93% -4%;
+  background-color: hsl(15deg, 100%, 70%);
+  background-size: 60px;
+  grid-area: work;
+}
+.activity:is(.play) {
+  background-image: url(../images/icon-play.svg);
+  background-repeat: no-repeat;
+  background-position: 93% -2%;
+  background-color: hsl(195deg, 73%, 62%);
+  background-size: 60px;
+  grid-area: play;
+}
+.activity:is(.study) {
+  background-image: url(../images/icon-study.svg);
+  background-repeat: no-repeat;
+  background-position: 93% -2%;
+  background-color: hsl(348deg, 100%, 68%);
+  background-size: 60px;
+  grid-area: study;
+}
+.activity:is(.exercise) {
+  background-image: url(../images/icon-exercise.svg);
+  background-repeat: no-repeat;
+  background-position: 93% -2%;
+  background-color: hsl(145deg, 58%, 55%);
+  background-size: 60px;
+  grid-area: exercise;
+}
+.activity:is(.social) {
+  background-image: url(../images/icon-social.svg);
+  background-repeat: no-repeat;
+  background-position: 93% -2%;
+  background-color: hsl(264deg, 64%, 52%);
+  background-size: 60px;
+  grid-area: social;
+}
+.activity:is(.self-care) {
+  background-image: url(../images/icon-self-care.svg);
+  background-repeat: no-repeat;
+  background-position: 93% -2%;
+  background-color: hsl(43deg, 84%, 65%);
+  background-size: 60px;
+  grid-area: self_care;
+}
+
+@media (min-width: 550px) {
+  .container {
+    grid-template-areas: "dash work" "dash play" "study exercise" "social self_care";
+    grid-auto-columns: 1fr;
+  }
+  .dash {
+    grid-row: 1/3;
+  }
+  .dash .dash__profile {
+    flex-direction: column;
+    align-items: start;
+  }
+  .dash .profile__img {
+    width: 70px;
+    margin-bottom: 3rem;
+    transition: transform 0.2s ease-in-out;
+  }
+  .dash .profile__img:hover {
+    transform: scale(1.08);
+    box-shadow: rgb(28, 31, 74) 0px 0px 4px 0px;
+  }
+  .dash .profile__txt .report {
+    margin-bottom: 1rem;
+  }
+  .dash .profile__txt .profile__name {
+    font-size: 30px;
+    line-height: 35px;
+    font-size: 3rem;
+    line-height: 3.5rem;
+    width: 6ch;
+  }
+  .nav__list {
+    flex-direction: column;
+    gap: 2rem;
+  }
+}
+@media (min-width: 772px) {
+  .container {
+    grid-template-areas: "dash work play" "dash study exercise" "dash social self_care ";
+  }
+}
+@media (min-width: 900px) {
+  .container {
+    width: 100%;
+    max-width: 1110px;
+    max-width: 111rem;
+    grid-template-areas: "dash work play study" "dash exercise social self_care";
+  }
+  .dash .dash__profile {
+    padding-bottom: 7rem;
+    height: 70%;
+  }
+  .dash .profile__img {
+    width: 80px;
+  }
+  .dash .profile__txt .profile__name {
+    font-size: 40px;
+    line-height: 45px;
+    font-size: 4rem;
+    line-height: 4.5rem;
+  }
+  .activity .activity__content {
+    gap: 4rem;
+    padding: 2em 2em;
+  }
+  .activity .activity-time__row {
+    flex-direction: column;
+    align-items: start;
+    gap: 2rem;
+  }
+  .activity .time {
+    font-size: 45px;
+    line-height: 15px;
+    font-size: 4.5rem;
+    line-height: 1.5rem;
+  }
+  .activity .time-frame {
+    margin-top: 0.5rem;
+  }
+}/*# sourceMappingURL=main.css.map */

@@ -1,0 +1,318 @@
+@import "./generalStyles";
+@import "./resets";
+@import "./mixins";
+@import "./jsClasses";
+
+h2 {
+  @include font-size(18, 15);
+}
+
+body {
+  width: 100%;
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  background-color: $clr_very-dark-blue;
+  padding: 2rem;
+  font-family: $ff-primary;
+}
+
+.container {
+  // @include width(80%, 1110);
+  width: 100%;
+  display: grid;
+  grid-template-areas:
+    "dash"
+    "work"
+    "play"
+    "study"
+    "exercise"
+    "social"
+    "self_care";
+  gap: 2rem;
+  color: white;
+}
+// justify-items: center;
+
+.dash {
+  display: flex;
+  flex-direction: column;
+  grid-area: dash;
+  border-radius: $radius;
+  
+
+  .dash__profile {
+    display: flex;
+    align-items: center;
+    background-color: $clr_blue;
+    border-radius: $radius;
+  }
+
+  .profile__img {
+    width: 60px;
+    // width: 26%;
+    border: 3.5px solid white;
+    border-radius: 50%;
+  }
+  .profile__txt {
+    margin-left: 1rem;
+    display: flex;
+    flex-direction: column;
+    font-weight: $fw1;
+    // gap: .5rem;
+  }
+
+  .profile__txt .report {
+    @include font-size(15, 15);
+    color: $clr_pale-blue;
+  }
+
+  .profile__txt .profile__name {
+    font-weight: $fw1;
+    @include font-size(20 , 35);
+  }
+}
+
+.navigation {
+  padding: $pad-nav;
+
+  .nav__list {
+    display: flex;
+    justify-content: space-between;
+
+    .options {
+      @include font-size(15, 15);
+      font-weight: $fw2;
+    }
+
+    .options:hover {
+      color: white;
+    }
+  }
+}
+
+.dash,
+.activity__content {
+  background-color: $clr_dark-blue;
+  border-radius: $radius;
+  overflow: hidden;
+  width: 100%;
+}
+
+.dash__profile,
+.activity__content {
+  padding: $pad-card;
+}
+
+.activity {
+  border-radius: $radius;
+  display: flex;
+  align-items: flex-end;
+  cursor: pointer;
+  
+
+  &:hover > .activity__content {
+    background-color: $card-hover;
+
+  }
+
+  .activity__content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 2rem;
+    transition: 0.2s ease-in-out;
+    height: 80%;
+    padding: 6em 2em;
+  }
+
+  .activity__title {
+    font-weight: $fw2;
+  }
+
+  .time {
+    font-weight: $fw1;
+    @include font-size(30, 15);
+  }
+
+  .time-frame {
+    @include font-size(13, 15);
+    color: $clr_pale-blue;
+  }
+
+  .activity__row,
+  .activity-time__row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .svg:hover > svg path {
+    fill: #fff;
+  }
+
+  &:is(.work) {
+    @include background-img(
+      $clr_light-red--work,
+      url(../images/icon-work.svg),
+      93% -4%,
+      60px
+    );
+    grid-area: work;
+  }
+
+  &:is(.play) {
+    @include background-img(
+      $clr_soft-blue--play,
+      url(../images/icon-play.svg),
+      93% -2%,
+      60px
+    );
+    grid-area: play;
+  }
+
+  &:is(.study) {
+    @include background-img(
+      $clr_light-red--study,
+      url(../images/icon-study.svg),
+      93% -2%,
+      60px
+    );
+    grid-area: study;
+  }
+
+  &:is(.exercise) {
+    @include background-img(
+      $clr_lime-green--exercise,
+      url(../images/icon-exercise.svg),
+      93% -2%,
+      60px
+    );
+    grid-area: exercise;
+  }
+
+  &:is(.social) {
+    @include background-img(
+      $clr_violet--social,
+      url(../images/icon-social.svg),
+      93% -2%,
+      60px
+    );
+    grid-area: social;
+  }
+
+  &:is(.self-care) {
+    @include background-img(
+      $clr_soft-orange--self-care,
+      url(../images/icon-self-care.svg),
+      93% -2%,
+      60px
+    );
+    grid-area: self_care;
+  }
+}
+
+@media (min-width: 550px) {
+  .container {
+    grid-template-areas:
+      "dash work"
+      "dash play"
+      "study exercise"
+      "social self_care";
+    grid-auto-columns: 1fr;
+  }
+  .dash {
+    grid-row: 1 / 3;
+
+    .dash__profile {
+      flex-direction: column;
+      align-items: start;
+    }
+
+    .profile__img {
+      width: 70px;
+      margin-bottom: 3rem;
+      transition: transform .2s ease-in-out;
+
+      &:hover{
+        transform: scale(1.08);
+        box-shadow: rgba(28, 31, 74, 1) 0px 0px 4px 0px;
+      }
+    }
+
+    .profile__txt .report {
+      margin-bottom: 1rem;
+    }
+    .profile__txt .profile__name {
+      @include font-size(30, 35);
+      width: 6ch;
+    }
+  }
+
+  .nav__list {
+    flex-direction: column;
+    gap: 2rem;
+  }
+}
+
+@media (min-width: 772px) {
+  .container {
+    grid-template-areas:
+      "dash work play"
+      "dash study exercise"
+      "dash social self_care ";
+  }
+}
+
+@media (min-width: 900px) {
+  .container {
+    @include width(100%, 1110);
+    grid-template-areas:
+      "dash work play study"
+      "dash exercise social self_care";
+  }
+
+
+  .dash {
+    .dash__profile {
+      padding-bottom: 7rem;
+      height: 70%;
+    }
+
+    .profile__img{
+      width: 80px;
+    }
+
+    .profile__txt .profile__name {
+      @include font-size(40, 45);
+    }
+  }
+
+  .activity {
+    .activity__content {
+      gap: 4rem;
+      padding: 2em 2em;
+    }
+
+    .activity-time__row {
+      flex-direction: column;
+      align-items: start;
+      gap: 2rem;
+    }
+
+    .time {
+      @include font-size(45, 15);
+    }
+
+    .time-frame{
+      margin-top: .5rem;
+    }
+  }
+}
+// .attribution {
+//   font-size: 11px;
+//   text-align: center;
+// }
+// .attribution a {
+//   color: hsl(228, 45%, 44%);
+// }

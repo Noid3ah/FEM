@@ -1,0 +1,145 @@
+@import url("https://fonts.googleapis.com/css2?family=Mukta:wght@200;300;400;500;600;700;800&family=Plus+Jakarta+Sans:wght@200;400;500;800&family=Poppins:wght@200;300;400;500;600;700;800&display=swap");
+*,
+*:after,
+*:before {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  border: none;
+}
+
+* {
+  font: inherit;
+}
+
+ul[role=list],
+ol[role=list] {
+  list-style: none;
+}
+
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  width: 100%;
+}
+
+html {
+  height: 100%;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #e5effa;
+  color: #5e6778;
+  font-size: 16px;
+  font-family: "Plus Jakarta Sans", sans-serif;
+}
+
+.component {
+  background-color: #ffffff;
+  border-radius: var(--size-3);
+  padding: clamp(var(--size-2), 2vw, var(--size-6));
+  width: min(100%, 720px);
+}
+.component header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: var(--size-5);
+}
+.component header .logo {
+  font-size: var(--font-size-fluid-1);
+  font-weight: var(--font-weight-9);
+  color: #1c202b;
+  display: flex;
+  align-items: center;
+}
+.component header .logo span {
+  font-weight: var(--font-weight-5);
+  font-size: var(--font-size-fluid-0);
+  background-color: hsl(219deg, 85%, 26%);
+  padding: 0.1rem calc(var(--size-3) - 0.3rem);
+  margin-left: 0.5rem;
+  color: #ffffff;
+  border-radius: calc(var(--size-2) - 0.2rem);
+  text-align: center;
+}
+.component header .mark-as-read {
+  font-size: var(--font-size-fluid-0);
+  cursor: pointer;
+  transition: 0.2s ease-in-out;
+}
+.component header .mark-as-read:hover {
+  color: hsl(219deg, 85%, 26%);
+}
+.component .notification {
+  display: flex;
+  align-items: center;
+  border-radius: var(--size-2);
+  padding: var(--size-3);
+  background-color: hsl(206deg, 64%, 97%);
+}
+.component .notification + .notification {
+  margin-top: var(--size-2);
+}
+.component .notification img {
+  width: 35px;
+  height: 35px;
+  margin-right: var(--size-4);
+}
+.component .notification .notification__text {
+  display: flex;
+  flex-direction: column;
+}
+.component .notification .notification__text p {
+  font-size: clamp(0.9rem, 2vw, 1rem);
+}
+.component .notification .notification__text > p {
+  margin-bottom: var(--size-1);
+}
+.component .notification .notification__text > p .dot {
+  display: inline-block;
+  background-color: hsl(1deg, 90%, 64%);
+  border-radius: var(--size-9);
+  width: 7px;
+  height: 7px;
+  margin-bottom: 0.1rem;
+  margin-left: var(--size-2);
+}
+.component .notification .notification__text > p strong {
+  font-weight: var(--font-weight-8);
+}
+.component .notification .notification__text > p strong.action {
+  margin-left: var(--size-1);
+}
+.component .notification .notification__text > p strong.club {
+  color: hsl(219deg, 85%, 26%);
+}
+.component .notification .notification__text > p .username {
+  color: #1c202b;
+  margin-right: var(--size-1);
+}
+.component .notification .notification__text .time-frame {
+  font-weight: var(--font-weight-4);
+  color: #939dae;
+}/*# sourceMappingURL=main.css.map */

@@ -1,0 +1,151 @@
+@import url("https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&display=swap");
+@import "../resources/utility";
+
+@mixin flexCenter($direction) {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: $direction;
+}
+
+$small-textClr: hsl(215, 51%, 70%);
+$accentClr: #00fff7;
+$bgClr: hsl(217, 54%, 11%);
+$cardClr: hsl(216, 50%, 16%);
+$lineClr: hsl(215, 32%, 27%);
+$whiteClr: hsl(0, 0%, 100%);
+$cardRadius: 1rem;
+$imgRadius: 0.5rem;
+$fontSize-s: 18px;
+$fontSize-l: 25px;
+$fontFamily: "Outfit", sans-serif;
+$fontWeight1: 300;
+$fontWeight2: 400;
+$fontWeight3: 600;
+
+body {
+  @include flexCenter(column);
+  height: 100vh;
+  background-color: $bgClr;
+  font-family: $fontFamily;
+
+  .card {
+    @include flexCenter(column);
+    max-width: 350px;
+    align-items: flex-start;
+    background-color: $cardClr;
+    color: $small-textClr;
+    gap: 1.5rem;
+    border-radius: $cardRadius;
+    padding: 1.5rem;
+    font-size: $fontSize-s;
+
+    .card__img {
+      position: relative;
+      .card__img__img {
+        border-radius: $imgRadius;
+        cursor: pointer;
+        &:hover {
+          background-color: $accentClr;
+        }
+      }
+
+      .card__img__overlay {
+        @include flexCenter(column);
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        border-radius: $imgRadius;
+        background-color: rgba(0, 255, 247, 0.5);
+        opacity: 0;
+        cursor: pointer;
+        &:hover {
+          opacity: 1;
+        }
+
+        img {
+          width: 50px;
+        }
+      }
+    }
+
+    .card__txt {
+      @include flexCenter(column);
+      align-items: flex-start;
+      gap: 1rem;
+
+      .card__txt__title {
+        font-size: $fontSize-l;
+        color: $whiteClr;
+        &:hover {
+          color: $accentClr;
+        }
+      }
+
+      .card__txt__p {
+        font-weight: $fontWeight1;
+        line-height: 1.5em;
+      }
+
+      .card__row {
+        @include flexCenter(row);
+        justify-content: space-between;
+        width: 100%;
+
+        .card__row__left--bblue,
+        .card__row__right {
+          @include flexCenter(row);
+          img {
+            width: 12px;
+            margin-right: 8px;
+          }
+        }
+
+        .card__row__left--bblue {
+          color: $accentClr;
+          font-weight: $fontWeight2;
+        }
+
+        .card__row__right {
+          font-weight: $fontWeight1;
+          img {
+            width: 20px;
+          }
+        }
+      }
+    }
+
+    .line {
+      width: 100%;
+      height: 1px;
+      background-color: $lineClr;
+    }
+    .profile {
+      @include flexCenter(row);
+      justify-content: flex-start;
+      width: 100%;
+
+      .profile__img {
+        width: 40px;
+        border: 2px solid $whiteClr;
+        border-radius: 50%;
+      }
+
+      .profile__text {
+        margin: 0 auto;
+        font-weight: $fontWeight1;
+        margin-left: 18px;
+
+        a {
+          text-decoration: none;
+          color: $whiteClr;
+          &:hover {
+            color: $accentClr;
+          }
+        }
+      }
+    }
+  }
+}

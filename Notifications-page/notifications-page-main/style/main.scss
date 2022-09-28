@@ -1,0 +1,131 @@
+@import url("https://fonts.googleapis.com/css2?family=Mukta:wght@200;300;400;500;600;700;800&family=Plus+Jakarta+Sans:wght@200;400;500;800&family=Poppins:wght@200;300;400;500;600;700;800&display=swap");
+@import "../resources/resets";
+
+$red-5: hsl(1, 90%, 64%);
+$blue: hsl(219, 85%, 26%);
+
+$white-0: #ffffff;
+$blue-1: hsl(206, 64%, 97%);
+$blue-2: #e5effa;
+$blue-3: #dde7ee;
+$blue-4: #939dae;
+$blue-5: #5e6778;
+$blue-6: #1c202b;
+$size-para: 16px;
+
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: $blue-2;
+  color: $blue-5;
+  font-size: $size-para;
+  font-family: "Plus Jakarta Sans", sans-serif;
+  // padding-block: var(--size-5);
+}
+
+.component {
+  background-color: $white-0;
+  border-radius: var(--size-3);
+  padding: clamp(var(--size-2), 2vw, var(--size-6));
+  width: min(100%, 720px);
+
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: var(--size-5);
+
+    .logo {
+      font-size: var(--font-size-fluid-1);
+      font-weight: var(--font-weight-9);
+      color: $blue-6;
+      display: flex;
+      align-items: center;
+
+      span {
+        font-weight: var(--font-weight-5);
+        font-size: var(--font-size-fluid-0);
+        background-color: $blue;
+        padding: 0.1rem calc(var(--size-3) - 0.3rem);
+        margin-left: 0.5rem;
+        color: $white-0;
+        border-radius: calc(var(--size-2) - 0.2rem);
+        text-align: center;
+      }
+    }
+
+    .mark-as-read {
+      font-size: var(--font-size-fluid-0);
+      cursor: pointer;
+      transition: 0.2s ease-in-out;
+
+      &:hover {
+        color: $blue;
+      }
+    }
+  }
+
+  .notification {
+    display: flex;
+    align-items: center;
+    border-radius: var(--size-2);
+    padding: var(--size-3);
+    background-color: $blue-1;
+
+    & + .notification {
+      margin-top: var(--size-2);
+    }
+
+    img {
+      width: 35px;
+      height: 35px;
+      margin-right: var(--size-4);
+    }
+
+    .notification__text {
+      display: flex;
+      flex-direction: column;
+
+      p {
+        font-size: clamp(0.9rem, 2vw, 1rem);
+      }
+
+      & > p {
+        margin-bottom: var(--size-1);
+
+        .dot {
+          display: inline-block;
+          background-color: $red-5;
+          border-radius: var(--size-9);
+          width: 7px;
+          height: 7px;
+          margin-bottom: 0.1rem;
+          margin-left: var(--size-2);
+        }
+
+        strong {
+          font-weight: var(--font-weight-8);
+
+          &.action {
+            margin-left: var(--size-1);
+          }
+          &.club {
+            color: $blue;
+          }
+        }
+
+        .username {
+          color: $blue-6;
+          margin-right: var(--size-1);
+        }
+      }
+
+      .time-frame {
+        font-weight: var(--font-weight-4);
+        color: $blue-4;
+      }
+    }
+  }
+}

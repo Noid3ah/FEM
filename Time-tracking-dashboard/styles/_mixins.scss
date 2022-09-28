@@ -1,0 +1,27 @@
+@mixin center($direction) {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: $direction;
+}
+
+@mixin background-img($color, $url, $pos, $size) {
+  background-image: $url;
+  background-repeat: no-repeat;
+  background-position: $pos;
+  background-color: $color;
+  background-size: $size;
+}
+
+@mixin font-size($sizeValue: 1.6, $line: $sizeValue * 1.5) {
+  font-size: ($sizeValue * 1) + px;
+  line-height: ($line * 1) + px;
+  font-size: calc($sizeValue / 10) + rem;
+  line-height: calc($line / 10) + rem;
+}
+
+@mixin width($width, $maxwidth) {
+  width: $width;
+  max-width: calc($maxwidth * 1) + px;
+  max-width: calc($maxwidth / 10) + rem;
+}
