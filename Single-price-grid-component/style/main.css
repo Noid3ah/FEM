@@ -1,0 +1,85 @@
+@import url("https://fonts.googleapis.com/css2?family=Karla:wght@400;700&family=Mukta:wght@200;300;400;500;600;700;800&family=Plus+Jakarta+Sans:wght@200;400;500;800&family=Poppins:wght@200;300;400;500;600;700;800&display=swap");
+*,
+*:after,
+*:before {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  border: none;
+}
+
+* {
+  font: inherit;
+}
+
+ul[role=list],
+ol[role=list] {
+  list-style: none;
+}
+
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  width: 100%;
+}
+
+html {
+  height: 100%;
+}
+
+body {
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+body {
+  background-color: var(--blue-1);
+  font-family: "Karla", sans-serif;
+  font-weight: var(--font-weight-400);
+  color: var(--gray-0);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.component {
+  width: min(80%, 900px);
+  display: grid;
+}
+.component .join {
+  background: white;
+}
+.component .subscription {
+  background: var(--cyan-7);
+}
+.component .subscription .subscription__btn {
+  background: var(--lime-5);
+}
+.component .why {
+  background: var(--cyan-6);
+}/*# sourceMappingURL=main.css.map */
