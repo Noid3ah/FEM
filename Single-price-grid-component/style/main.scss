@@ -10,25 +10,117 @@ body {
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  min-height: 100vh;
+  padding-block: 3rem;
 }
 
 .component {
-  width: min(80%, 900px);
+  width: min(90%, 700px);
   display: grid;
+  overflow: hidden;
+  grid-template-areas:
+    "join"
+    "subsc"
+    "why";
+
+  .section {
+    padding-inline: var(--size-fluid-4);
+    padding-block: calc(var(--size-fluid-4) - 0.5rem);
+  }
+
+  .head {
+    font-size: var(--font-size-3);
+    font-weight: var(--font-weight-7);
+    margin-block-end: var(--size-3);
+  }
+
+  .row {
+    display: flex;
+    align-items: center;
+    gap: var(--size-3);
+  }
+
+  &.rounded,
+  .rounded {
+    border-radius: var(--size-2);
+  }
 
   .join {
     background: white;
+    display: flex;
+    flex-direction: column;
+    // gap: var(--size-4);
+    grid-area: join;
+
+    .join__heading {
+      color: var(--grape-6);
+    }
+
+    .join-sub__heading {
+      color: var(--yellow-7);
+      font-weight: var(--font-weight-7);
+      max-width: 100%;
+      margin-block-end: 1rem;
+    }
+
+    .join__para {
+      color: var(--gray-6);
+      line-height: var(--font-lineheight-3);
+    }
   }
 
   .subscription {
-    background: var(--cyan-7);
+    background: var(--grape-7);
+    grid-area: subsc;
+
+    .subscription__price {
+      .price {
+        font-size: var(--font-size-5);
+        font-weight: var(--font-weight-7);
+      }
+
+      .time-frame {
+        opacity: 0.6;
+      }
+    }
+
+    .subscription__para {
+      margin-block-end: var(--size-6);
+    }
 
     .subscription__btn {
-      background: var(--lime-5);
+      background: var(--blue-3);
+      width: 100%;
+      padding: var(--font-size-0);
+      box-shadow: rgba(0, 0, 0, 0.2) 0px 3px 10px 2px;
+      font-weight: var(--font-weight-7);
+
+      &:hover {
+        background: var(--blue-5);
+      }
     }
   }
 
   .why {
-    background: var(--cyan-6);
+    background: var(--grape-5);
+    grid-area: why;
+
+    .list {
+      line-height: 1.4;
+    }
+  }
+}
+
+@media (min-width: 765px) {
+  .component {
+    grid-template-areas:
+      "join join"
+      "subsc why";
+
+    .join {
+      .join-sub__heading {
+        margin-block-end: 0.3rem;
+      }
+    }
   }
 }
