@@ -73,6 +73,10 @@ body {
     background: var(--grape-7);
     grid-area: subsc;
 
+    .subscription__heading {
+      color: white;
+    }
+
     .subscription__price {
       .price {
         font-size: var(--font-size-5);
@@ -104,6 +108,10 @@ body {
   .why {
     background: var(--grape-5);
     grid-area: why;
+
+    .why__heading {
+      color: white;
+    }
 
     .list {
       line-height: 1.4;

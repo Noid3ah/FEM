@@ -118,6 +118,9 @@ body {
   background: var(--grape-7);
   grid-area: subsc;
 }
+.component .subscription .subscription__heading {
+  color: white;
+}
 .component .subscription .subscription__price .price {
   font-size: var(--font-size-5);
   font-weight: var(--font-weight-7);
@@ -142,6 +145,9 @@ body {
 .component .why {
   background: var(--grape-5);
   grid-area: why;
+}
+.component .why .why__heading {
+  color: white;
 }
 .component .why .list {
   line-height: 1.4;
